@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown 笔记应用</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>我的笔记</h1>
+        <div class="header-actions">
+          <button id="create-note-btn" class="create-btn">+ 新建笔记</button>
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
+      </div>
+      
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="搜索笔记..."
+        />
+      </div>
+
+      <div class="filter-container">
+        <button id="filter-all" class="filter-btn active">全部</button>
+        <button id="filter-favorites" class="filter-btn">⭐ 收藏</button>
+        <select id="sort-select" class="sort-select">
+          <option value="updated">最近更新</option>
+          <option value="created">创建时间</option>
+          <option value="title">标题</option>
+        </select>
+      </div>
+
+      <div id="tags-container" class="tags-container"></div>
+      
+      <div id="note-list" class="note-list"></div>
+
+      <div class="sidebar-footer">
+        <button id="export-all-btn" class="export-btn">📥 导出所有笔记</button>
+      </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <div class="editor-container">
+        <div class="editor-header">
+          <h2>编辑器</h2>
+          <div class="editor-actions">
+            <button id="favorite-btn" class="action-btn" title="收藏">⭐</button>
+            <button id="export-btn" class="action-btn" title="导出">📥</button>
+            <input type="text" id="tag-input" class="tag-input" placeholder="添加标签..." />
+          </div>
+        </div>
+        <div id="current-tags" class="current-tags"></div>
+        <textarea 
+          id="editor" 
+          class="editor" 
+          placeholder="开始输入 Markdown...&#10;&#10;快捷键：&#10;Ctrl+S - 保存&#10;Ctrl+N - 新建笔记&#10;Ctrl+F - 搜索"
+        ></textarea>
+        <div id="stats" class="stats-bar"></div>
+      </div>
+
+      <div class="preview-container">
+        <div class="preview-header">
+          <h2>预览</h2>
+        </div>
+        <div id="preview" class="preview"></div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
