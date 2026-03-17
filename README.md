@@ -120,4 +120,3 @@ MIT License
 ## 🙏 致谢
 
 灵感来源于 Notion、Bear、Typora 等优秀的笔记应用。
-
